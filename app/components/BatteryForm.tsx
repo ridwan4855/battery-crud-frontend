@@ -51,13 +51,13 @@ export default function BatteryForm({
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-4 mb-8">
+    <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-4 mb-4">
       {/* Name Field */}
       <div>
         <label className="block mb-1">Name</label>
         <input
           {...register("name", { required: "Name is required" })}
-          className={`w-full p-2 border rounded ${
+          className={`w-full p-2 border rounded-2xl ${
             errors.name ? "border-red-500" : ""
           }`}
         />
@@ -71,7 +71,7 @@ export default function BatteryForm({
         <label className="block mb-1">Type</label>
         <select
           {...register("type", { required: "Type is required" })}
-          className={`w-full p-2 border rounded ${
+          className={`w-full p-2 border rounded-2xl ${
             errors.type ? "border-red-500" : ""
           }`}
         >
@@ -96,7 +96,7 @@ export default function BatteryForm({
             min: { value: 0.1, message: "Must be greater than 0" },
             valueAsNumber: true,
           })}
-          className={`w-full p-2 border rounded ${
+          className={`w-full p-2 border rounded-2xl ${
             errors.voltage ? "border-red-500" : ""
           }`}
         />
@@ -115,7 +115,7 @@ export default function BatteryForm({
             min: { value: 1, message: "Must be at least 1 mAh" },
             valueAsNumber: true,
           })}
-          className={`w-full p-2 border rounded ${
+          className={`w-full p-2 border rounded-2xl ${
             errors.capacity ? "border-red-500" : ""
           }`}
         />
@@ -135,7 +135,7 @@ export default function BatteryForm({
             min: { value: 0.01, message: "Must be greater than 0" },
             valueAsNumber: true,
           })}
-          className={`w-full p-2 border rounded ${
+          className={`w-full p-2 border rounded-2xl ${
             errors.price ? "border-red-500" : ""
           }`}
         />
@@ -146,7 +146,7 @@ export default function BatteryForm({
 
       <button
         type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        className="bg-slate-500 text-white px-4 py-2 hover:bg-slate-600 rounded-2xl"
       >
         {battery ? "Update Battery" : "Add Battery"}
       </button>

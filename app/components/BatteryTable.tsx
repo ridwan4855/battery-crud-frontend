@@ -12,28 +12,48 @@ export default function BatteryTable({
   onDelete,
 }: BatteryTableProps) {
   return (
-    <table className="min-w-full mt-4">
+    <table className="min-w-full mt-10 text-center border border-slate-200">
       <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Voltage</th>
-          <th>Capacity</th>
-          <th>Price</th>
-          <th>Actions</th>
+        <tr className="border-b border-slate-200">
+          <th className="border border-slate-200 px-4 py-2">Name</th>
+          <th className="border border-slate-200 px-4 py-2">Type</th>
+          <th className="border border-slate-200 px-4 py-2">Voltage</th>
+          <th className="border border-slate-200 px-4 py-2">Capacity</th>
+          <th className="border border-slate-200 px-4 py-2">Price</th>
+          <th className="border border-slate-200 px-4 py-2">Actions</th>
         </tr>
       </thead>
       <tbody>
         {batteries.map((battery) => (
-          <tr key={battery.id}>
-            <td>{battery.name}</td>
-            <td>{battery.type}</td>
-            <td>{battery.voltage}V</td>
-            <td>{battery.capacity}mAh</td>
-            <td>${battery.price}</td>
-            <td>
-              <button onClick={() => onEdit(battery)}>Edit</button>
-              <button onClick={() => onDelete(battery.id)}>Delete</button>
+          <tr key={battery.id} className="border border-slate-200 px-4 py-2">
+            <td className="border border-slate-200 px-4 py-2">
+              {battery.name}
+            </td>
+            <td className="border border-slate-200 px-4 py-2">
+              {battery.type}
+            </td>
+            <td className="border border-slate-200 px-4 py-2">
+              {battery.voltage}V
+            </td>
+            <td className="border border-slate-200 px-4 py-2">
+              {battery.capacity}mAh
+            </td>
+            <td className="border border-slate-200 px-4 py-2">
+              ${battery.price}
+            </td>
+            <td className="border border-slate-200 px-4 py-2">
+              <button
+                onClick={() => onEdit(battery)}
+                className="p-4 bg-blue-500 rounded-2xl mr-2 text-white"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => onDelete(battery.id)}
+                className="p-4 bg-red-500 rounded-2xl text-white"
+              >
+                Delete
+              </button>
             </td>
           </tr>
         ))}

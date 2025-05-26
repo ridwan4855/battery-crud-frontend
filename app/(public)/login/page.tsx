@@ -63,22 +63,31 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <form onSubmit={handleLogin} className="p-4 border rounded">
-        <input
-          type="text"
-          placeholder="Username"
-          name="username"
-          className="block mb-2"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          className="block mb-2"
-          required
-        />
-        <button type="submit" className="bg-blue-500 text-white p-2">
+      <form
+        onSubmit={handleLogin}
+        className="p-4 border rounded-2xl bg-slate-300"
+      >
+        <h1 className="font-bold text-center mb-5">LOGIN BATTERY</h1>
+        <div className="mb-5">
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            className="block mb-2 rounded-2xl"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="block mb-2 rounded-2xl"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          className="bg-slate-500 text-white p-2 rounded-2xl w-full"
+        >
           Login
         </button>
       </form>

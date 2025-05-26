@@ -40,18 +40,22 @@ export default function Home() {
 
   return (
     <main className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Battery Inventory</h1>
-      <BatteryForm
-        onSubmit={(batteryData) => {
-          if (editingBattery) {
-            handleUpdate(batteryData as Battery);
-          } else {
-            handleCreate(batteryData as Omit<Battery, "id">);
-          }
-        }}
-        battery={editingBattery ?? undefined}
-        onCancel={() => setEditingBattery(null)}
-      />
+      <div className="flex flex-col items-center">
+        <div className="w-[50%] max-sm:w-full border p-5 rounded-2xl bg-slate-300">
+          <h1 className="text-2xl font-bold mb-4">Battery Inventory</h1>
+          <BatteryForm
+            onSubmit={(batteryData) => {
+              if (editingBattery) {
+                handleUpdate(batteryData as Battery);
+              } else {
+                handleCreate(batteryData as Omit<Battery, "id">);
+              }
+            }}
+            battery={editingBattery ?? undefined}
+            onCancel={() => setEditingBattery(null)}
+          />
+        </div>
+      </div>
       <BatteryTable
         key={editingBattery?.id || "create-form"}
         batteries={batteries}
