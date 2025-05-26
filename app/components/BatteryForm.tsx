@@ -146,7 +146,7 @@ export default function BatteryForm({
 
       <button
         type="submit"
-        className="bg-slate-500 text-white px-4 py-2 hover:bg-slate-600 rounded-2xl"
+        className="bg-slate-500 text-white px-4 py-2 hover:bg-slate-600 rounded-2xl mr-3"
       >
         {battery ? "Update Battery" : "Add Battery"}
       </button>
@@ -156,9 +156,9 @@ export default function BatteryForm({
           type="button"
           onClick={() => {
             reset();
-            onCancel?.(); // Clear parent's editing state
+            onCancel?.();
           }}
-          className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+          className="bg-slate-500 text-white px-4 py-2 rounded-2xl hover:bg-slate-600"
         >
           Cancel Edit
         </button>
