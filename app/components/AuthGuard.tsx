@@ -1,9 +1,10 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [isAllowed, setIsAllowed] = useState(false);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("storage", storageListener);
   }, [router]);
 
-  if (!isAllowed) return null;
+  if (!isAllowed && pathname !== "/login") return null;
 
   return <>{children}</>;
 }
