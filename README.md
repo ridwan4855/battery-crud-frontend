@@ -15,7 +15,7 @@ https://battery-crud-backend-git-main-ridwan4855s-projects.vercel.app/
 Username: admin
 Password: password
 
-# Sign Out Application
+# LogOut Application
 
 - Press F12
 - Go to Application
@@ -23,7 +23,7 @@ Password: password
 - You will find key == **authToken**
 - delete this token and you will automatically logout
 
-# Installation for local run
+# Installation Frontend for local run
 
 ## 1. Clone the Repository
 
@@ -33,6 +33,28 @@ cd battery-crud-frontend
 
 npm install
 
+## 2. Create env local
+
 Create a **.env.local** file in the root of this folder:
 
 -- NEXT_PUBLIC_API_URL=http://localhost:8080
+
+# Installation BackEnd for local run
+
+## 1. Clone the Repository
+
+git clone https://github.com/ridwan4855/battery-crud-backend.git
+
+cd battery-crud-backend
+
+go mod tidy
+
+go run main.go
+
+## 2. Create env local
+
+Create a **.env.local** file in the root of this folder:
+
+-- JWT_SECRET = **your own secret key**
+
+After the installation of those two Applications you now can run it locally.
