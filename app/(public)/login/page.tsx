@@ -5,12 +5,15 @@ import { FormEvent, useEffect, useState } from "react";
 export default function LoginPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
+  const [isChecking, setIsChecking] = useState(true);
 
   useEffect(() => {
     // Check if user is already authenticated
     const token = localStorage.getItem("authToken");
     if (token) {
-      router.push("/");
+      router.replace("/");
+    } else {
+      setIsChecking(false);
     }
     setIsLoading(false);
   }, [router]);
@@ -50,11 +53,13 @@ export default function LoginPage() {
       }
 
       localStorage.setItem("authToken", data.token);
-      router.push("/");
+      router.replace("/");
     } catch (error) {
       console.error("Login error:", error);
     }
   };
+
+  if (isChecking) return null;
 
   return (
     <div className="min-h-screen flex items-center justify-center">
