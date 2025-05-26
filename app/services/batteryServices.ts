@@ -2,7 +2,7 @@ import { Battery } from "../types/battery";
 
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
-  "https://battery-crud-backend-git-main-ridwan4855s-projects.vercel.app/";
+  "https://battery-crud-backend-git-main-ridwan4855s-projects.vercel.app";
 
 export const batteryAPI = {
   async handleResponse(response: Response) {
